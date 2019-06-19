@@ -21,10 +21,10 @@ class MusicTab extends Component {
             </Table.Row>
           </Table.Header>
 
-          {playlistSongs &&
-            playlistSongs.map(song => (
+          {playlistSongs
+            && playlistSongs.map(song => (
               <Table.Body key={song.id}>
-                <Table.Row >
+                <Table.Row>
                   <Table.Cell>{song.title}</Table.Cell>
                   <Table.Cell>
                     <Icon disabled name="play" />
