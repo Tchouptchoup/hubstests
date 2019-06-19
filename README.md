@@ -9,6 +9,7 @@
 ### TO DO (à faire) Prime 
 
 - Mise en forme
+- Bug localstorage
 
 ### TO DO (à faire) Graph 
 
