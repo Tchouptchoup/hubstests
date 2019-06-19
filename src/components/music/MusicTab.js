@@ -1,18 +1,25 @@
 import React, { Component } from "react";
 import { Table, Icon } from "semantic-ui-react";
-import music from "../../utils/music.json";
 import { connect } from "react-redux";
+import music from "../../utils/music.json";
 import { playTitle } from "../../actions/music";
+import { addToPlaylist } from "../../actions/playlist";
 
 class MusicTab extends Component {
   constructor(props) {
     super(props);
     this.handlePlay = this.handlePlay.bind(this);
+    this.handleAdd = this.handleAdd.bind(this);
   }
 
   handlePlay(title) {
     const { playTitle } = this.props;
     playTitle(title);
+  }
+
+  handleAdd(title) {
+    const { addToPlaylist } = this.props;
+    addToPlaylist(title);
   }
 
   render() {
@@ -33,7 +40,7 @@ class MusicTab extends Component {
               <Table.Cell onClick={() => this.handlePlay(title)}>
                 <Icon disabled name="play" />
               </Table.Cell>
-              <Table.Cell>
+              <Table.Cell onClick={() => this.handleAdd(title)}>
                 <Icon disabled name="add" />
               </Table.Cell>
             </Table.Row>
@@ -45,7 +52,8 @@ class MusicTab extends Component {
 }
 
 const mapDispatchToProps = {
-  playTitle
+  playTitle,
+  addToPlaylist
 };
 
 export default connect(

@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import { Table, Icon, Header } from "semantic-ui-react";
+import { connect } from "react-redux";
 
 class MusicTab extends Component {
   render() {
+    const {
+      playlist: { playlistSongs }
+    } = this.props;
     return (
       <div>
         <Header as="h3" className="title">
@@ -17,23 +21,28 @@ class MusicTab extends Component {
             </Table.Row>
           </Table.Header>
 
-          {/* {music.map(title => (
-          <Table.Body>
-            <Table.Row key={title.id}>
-              <Table.Cell>{title.title}</Table.Cell>
-              <Table.Cell>
-                <Icon disabled name="play" />
-              </Table.Cell>
-              <Table.Cell>
-                <Icon disabled name="trash" />
-              </Table.Cell>
-            </Table.Row>
-          </Table.Body>
-        ))} */}
+          {playlistSongs &&
+            playlistSongs.map(song => (
+              <Table.Body>
+                <Table.Row key={song.id}>
+                  <Table.Cell>{song.title}</Table.Cell>
+                  <Table.Cell>
+                    <Icon disabled name="play" />
+                  </Table.Cell>
+                  <Table.Cell>
+                    <Icon disabled name="trash" />
+                  </Table.Cell>
+                </Table.Row>
+              </Table.Body>
+            ))}
         </Table>
       </div>
     );
   }
 }
 
-export default MusicTab;
+const mapStateToProps = state => ({
+  playlist: state.playlist
+});
+
+export default connect(mapStateToProps)(MusicTab);

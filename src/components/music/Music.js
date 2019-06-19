@@ -1,7 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import MusicTab from "./MusicTab";
 import PlaylistTab from "./PlaylistTab";
-import { connect } from "react-redux";
 
 class Music extends Component {
   render() {
@@ -20,7 +20,7 @@ class Music extends Component {
           </audio>
         </figure>
         <MusicTab />
-        <PlaylistTab />Ò
+        <PlaylistTab />
       </div>
     );
   }
