@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "eslint-config-airbnb": "^17.1.0",
+    "highcharts": "^7.1.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-jsx-highcharts": "^3.6.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "semantic-ui": "^2.4.2",
