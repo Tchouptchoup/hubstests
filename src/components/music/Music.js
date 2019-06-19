@@ -1,9 +1,33 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import MusicTab from "./MusicTab";
+import PlaylistTab from "./PlaylistTab";
 
 class Music extends Component {
   render() {
-    return <div>"Music"</div>;
+    const {
+      music: { playingTitle, playingSlug, playingArtist }
+    } = this.props;
+    return (
+      <div>
+        <figure>
+          <figcaption>
+            Listen to {playingTitle} - {playingArtist}:
+          </figcaption>
+          <audio controls autoPlay src={`/songs/${playingSlug}.mp3`}>
+            Your browser does not support the
+            <code>audio</code> element.
+          </audio>
+        </figure>
+        <MusicTab />
+        <PlaylistTab />
+      </div>
+    );
   }
 }
 
-export default Music;
+const mapStateToProps = state => ({
+  music: state.music
+});
+
+export default connect(mapStateToProps)(Music);
