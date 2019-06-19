@@ -1,0 +1,87 @@
+[
+    {
+        "id":1,
+        "title":"Ametsetan",
+        "artist":"En Tol Sarmiento",
+        "slug": "ametsetan"
+    },
+    {
+        "id":2,
+        "title":"Dans mon HLM",
+        "artist": "Renaud",
+        "slug": "dans-mon-hlm"
+    },
+
+    {
+        "id":3,
+        "title":"Dernier métro",
+        "artist":"The pirouettes",
+        "slug":"dernier-metro"
+    },
+    {
+        "id":4,
+        "title":"Flou",
+        "artist":"Angele",
+        "slug":"flou"
+    },
+    {
+        "id":5,
+        "title":"Fous ta cagoule",
+        "artist":"Fatal Bazooka",
+        "slug":"fous-ta-cagoule"
+    },
+    {
+        "id":6,
+        "title":"Hasta la vista",
+        "artist":"MC Solaar",
+        "slug":"hasta-la-vista"
+    },
+    {
+        "id":7,
+        "title":"Je te sens venir",
+        "artist": "Juliette Armanet",
+        "slug": "je-te-sens-venir"
+    },
+    {
+        "id":8,
+        "title":"Johnny B Goode",
+        "artist":"Chuck Berry",
+        "slug":"johnny-b-goode"
+    },
+    {
+        "id":9,
+        "title":"Killer Queen",
+        "artist":"Queen",
+        "slug":"killer-queen"
+    },
+    {
+        "id":10,
+        "title":"L'été indien",
+        "artist":"Joe Dassin",
+        "slug":"lete-indien"
+    },
+    {
+        "id":11,
+        "title":"Life on Mars",
+        "artist":"David Bowie",
+        "slug":"life-on-mars"
+    },
+    {
+        "id":12,
+        "title":"Romero El Madero",
+        "artist":"Ska-P",
+        "slug":"romero-el-madero"
+    },
+    {
+        "id":13,
+        "title":"The grand Duel",
+        "artist":"Luis Bacalov / Kill Bill",
+        "slug":"the-grand-duel"
+    },
+    {
+        "id":14,
+        "title": "You don't mess around with Jim",
+        "artist": "Jim Croce",
+        "slug": "you-dont-mess-around-with-jim"
+    }
+]
