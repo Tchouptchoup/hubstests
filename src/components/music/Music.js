@@ -14,7 +14,7 @@ class Music extends Component {
           <figcaption>
             Listen to {playingTitle} - {playingArtist}:
           </figcaption>
-          <audio controls autoplay src={`/songs/${playingSlug}.mp3`}>
+          <audio controls autoPlay src={`/songs/${playingSlug}.mp3`}>
             Your browser does not support the
             <code>audio</code> element.
           </audio>

@@ -34,8 +34,8 @@ class MusicTab extends Component {
         </Table.Header>
 
         {music.map(title => (
-          <Table.Body>
-            <Table.Row key={title.id}>
+          <Table.Body key={title.id}>
+            <Table.Row>
               <Table.Cell>{title.title}</Table.Cell>
               <Table.Cell onClick={() => this.handlePlay(title)}>
                 <Icon disabled name="play" />
