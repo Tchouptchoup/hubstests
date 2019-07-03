@@ -1,12 +1,43 @@
 import React, { Component } from "react";
 import { Table, Icon, Header } from "semantic-ui-react";
 import { connect } from "react-redux";
+import { playTitle } from "../../actions/music";
+import { removeToPlaylist, updatePlaylist } from "../../actions/playlist";
 
 class MusicTab extends Component {
+  constructor(props) {
+    super(props);
+    this.handlePlay = this.handlePlay.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
+  }
+
+  componentDidMount() {
+    const { updatePlaylist } = this.props;
+    const playlist = JSON.parse(localStorage.getItem("playlist"));
+    if (playlist) {
+      updatePlaylist(playlist);
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const { playlistSongs } = this.props;
+    if (prevProps.playlistSongs !== playlistSongs) {
+      localStorage.setItem("playlist", JSON.stringify(playlistSongs));
+    }
+  }
+
+  handlePlay(title) {
+    const { playTitle } = this.props;
+    playTitle(title);
+  }
+
+  handleRemove(title) {
+    const { removeToPlaylist } = this.props;
+    removeToPlaylist(title);
+  }
+
   render() {
-    const {
-      playlist: { playlistSongs }
-    } = this.props;
+    const { playlistSongs } = this.props;
     return (
       <div>
         <Header as="h3" className="title">
@@ -21,16 +52,22 @@ class MusicTab extends Component {
             </Table.Row>
           </Table.Header>
 
-          {playlistSongs
-            && playlistSongs.map(song => (
-              <Table.Body key={song.id}>
+          {playlistSongs &&
+            playlistSongs.map(title => (
+              <Table.Body key={title.id}>
                 <Table.Row>
-                  <Table.Cell>{song.title}</Table.Cell>
-                  <Table.Cell>
-                    <Icon disabled name="play" />
+                  <Table.Cell>{title.title}</Table.Cell>
+                  <Table.Cell
+                    onClick={() => this.handlePlay(title)}
+                    textAlign="center"
+                  >
+                    <Icon link disabled name="play" />
                   </Table.Cell>
-                  <Table.Cell>
-                    <Icon disabled name="trash" />
+                  <Table.Cell
+                    onClick={() => this.handleRemove(title)}
+                    textAlign="center"
+                  >
+                    <Icon link disabled name="trash" />
                   </Table.Cell>
                 </Table.Row>
               </Table.Body>
@@ -42,7 +79,16 @@ class MusicTab extends Component {
 }
 
 const mapStateToProps = state => ({
-  playlist: state.playlist
+  playlistSongs: state.playlist.playlistSongs
 });
 
-export default connect(mapStateToProps)(MusicTab);
+const mapDispatchToProps = {
+  playTitle,
+  removeToPlaylist,
+  updatePlaylist
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MusicTab);

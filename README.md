@@ -9,7 +9,7 @@
 ### TO DO (à faire) Prime 
 
 - Mise en forme
-- Bug local storage
+- Bug local storage OK
 - Vérifier le type de l'input OK
 
 ### TO DO (à faire) Graph 

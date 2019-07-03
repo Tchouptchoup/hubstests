@@ -37,11 +37,18 @@ class MusicTab extends Component {
           <Table.Body key={title.id}>
             <Table.Row>
               <Table.Cell>{title.title}</Table.Cell>
-              <Table.Cell onClick={() => this.handlePlay(title)}>
-                <Icon disabled name="play" />
+              <Table.Cell
+                onClick={() => this.handlePlay(title)}
+                textAlign="center"
+              >
+                <Icon link disabled name="play" />
               </Table.Cell>
-              <Table.Cell onClick={() => this.handleAdd(title)}>
-                <Icon disabled name="add" />
+              <Table.Cell
+                onClick={() => this.handleAdd(title)}
+                style={{ cursor: "pointer" }}
+                textAlign="center"
+              >
+                <Icon link disabled name="add" />
               </Table.Cell>
             </Table.Row>
           </Table.Body>

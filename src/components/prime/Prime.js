@@ -43,7 +43,7 @@ class Prime extends Component {
     return (
       <Container>
         <Grid columns={1}>
-          <Grid.Row centered>
+          <Grid.Row>
             <Grid.Column>
               <Header as="h2" className="title">
                 Find the prime number
