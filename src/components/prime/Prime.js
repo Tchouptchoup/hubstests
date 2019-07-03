@@ -1,24 +1,6 @@
 import React, { Component } from "react";
 import { Header, Button, Form } from "semantic-ui-react";
-
-function isPrime(x) {
-  for (let j = 2; j < x; j += 1) {
-    if (x % j === 0) {
-      return false;
-    }
-  }
-  return true;
-}
-
-function findThePrime(number) {
-  let primeTab = [];
-  for (let i = 2; primeTab.length < parseInt(number); i += 1) {
-    if (isPrime(i)) {
-      primeTab.push(i);
-    }
-  }
-  return primeTab[parseInt(number) - 1];
-}
+import { findThePrime } from "../../utils/helpers";
 
 class Prime extends Component {
   constructor(props) {
@@ -39,6 +21,13 @@ class Prime extends Component {
     }
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    const { history } = this.state;
+    if (prevState.history !== history) {
+      localStorage.setItem("history", JSON.stringify(history));
+    }
+  }
+
   updateField(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
@@ -47,14 +36,7 @@ class Prime extends Component {
     const { number, history } = this.state;
     const thePrime = findThePrime(number);
     this.setState({ prime: thePrime });
-    const historyList = JSON.parse(localStorage.getItem("history"));
-    if (!historyList) {
-      this.setState({ history: history.push(number) });
-      localStorage.setItem("history", JSON.stringify(history));
-    } else {
-      this.setState({ history: [...this.state.history, number] });
-      localStorage.setItem("history", JSON.stringify(history));
-    }
+    this.setState({ history: [...history, number] });
   }
 
   render() {
@@ -69,6 +51,8 @@ class Prime extends Component {
             <input
               placeholder="Number"
               name="number"
+              control="input"
+              type="number"
               value={number}
               onChange={this.updateField}
             />

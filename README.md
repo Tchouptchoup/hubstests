@@ -10,6 +10,7 @@
 
 - Mise en forme
 - Bug local storage
+- Vérifier le type de l'input OK
 
 ### TO DO (à faire) Graph 
 
