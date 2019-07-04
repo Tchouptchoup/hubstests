@@ -1,17 +1,8 @@
-### TO DO (à faire) Music 
+### TO DO Music 
 
 - Ordre de la chanson qui change quand celle-ci est en lecture
 - Enchaînement des chansons
-- Boutons du tableau Playlist (lecture + suppression) OK
-- Ajout de la playlist au local storage OK
-- Mise en forme (cursors pointer) OK
 
-### TO DO (à faire) Prime 
+### TO DO Graph 
 
-- Mise en forme
-- Bug local storage OK
-- Vérifier le type de l'input OK
-
-### TO DO (à faire) Graph 
-
-- Importation et transformation du csv pour lecture avec la lib Highcharts
+- Gestion de la date dans l'abscisse
