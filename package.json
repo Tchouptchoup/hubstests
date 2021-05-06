@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "eslint-config-airbnb": "^17.1.0",
-    "highcharts": "^7.1.2",
+    "highcharts": "^9.0.0",
     "highcharts-react-official": "^2.2.2",
     "papaparse": "^5.0.0",
     "react": "^16.8.6",
